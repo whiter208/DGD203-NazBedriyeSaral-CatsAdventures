@@ -1,0 +1,73 @@
+using System;
+
+namespace DGD203_NazBedriyeSaral_CatsAdventures
+{
+    internal class Movement
+    {
+
+        int xPosition = 1;
+        int yPosition = 1;
+
+        public int CurrentXStatus()
+        {
+            return xPosition;
+        }
+
+        public int CurrentYStatus()
+        {
+            return yPosition;
+
+        }
+
+        public void Move(string moveInput)
+        {
+            if (moveInput == "up")
+            {
+                if (yPosition != 3)
+                {
+                    yPosition++;
+                }
+                else
+                {
+                    Console.WriteLine("I don't want to leave the neighborhood!");
+                }
+
+            }
+            else if (moveInput == "down")
+            {
+                if (yPosition != 1)
+                {
+                    yPosition--;
+                }
+                else
+                {
+                    Console.WriteLine("I don't want to leave the neighborhood!");
+                }
+            }
+            else if (moveInput == "right")
+            {
+                if (xPosition != 3)
+                {
+                    xPosition++;
+                }
+                else
+                {
+                    Console.WriteLine("I don't want to leave the neighborhood!");
+                }
+            }
+            else if (moveInput == "left")
+            {
+                if (xPosition != 1)
+                {
+                    xPosition--;
+                }
+                else
+                {
+                    Console.WriteLine("I don't want to leave the neighborhood!");
+                }
+            }
+
+        }
+
+    }
+}
