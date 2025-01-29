@@ -1,0 +1,75 @@
+using System;
+
+namespace DGD203_NazBedriyeSaral_CatsAdventures
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Inputs inputs = new Inputs();
+
+            Discover ddiscover = new Discover();
+
+            inputs.discover = ddiscover;
+
+            bool openGame = true;
+
+
+            while (openGame)
+            {
+
+                bool validInput = true;
+
+                while (validInput)
+
+                {
+                    Console.WriteLine("CAT'S ADVENTURES");
+                    Console.WriteLine("NEWGAME");
+                    Console.WriteLine("CREDITS");
+                    Console.WriteLine("");
+                    Console.WriteLine("Enter the valid input!");
+                    string input = Console.ReadLine().ToLower();
+                    if (input == "newgame")
+                    {
+                        Console.WriteLine("Purrrrfect choice.");
+                        validInput = false;
+                    }
+                    else if (input == "credits")
+                    {
+                        Console.WriteLine("CAT'S ADVENTURES");
+                        Console.WriteLine("Naz Bedriye Saral");
+
+                    }
+                    else
+                    {
+
+                        Console.WriteLine("Try again");
+                    }
+                }
+
+                bool newGame = true;
+
+
+                while (newGame)
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("discover or d, status, up, down, left, right, purr");
+
+                    string newInput = Console.ReadLine();
+
+                    inputs.NewInput(newInput);
+
+                    if (ddiscover.GameEndCheck())
+                    {
+                        newGame = false;
+                    }
+
+
+                }
+
+
+            }
+        }
+    }
+}
