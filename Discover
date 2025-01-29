@@ -1,0 +1,86 @@
+using System;
+
+namespace DGD203_NazBedriyeSaral_CatsAdventures
+{
+    internal class Discover
+    {
+
+        bool oldLadyEvent = false;
+        bool fisherManEvent = false;
+
+        OldLady oldLady = new OldLady();
+
+        Fisherman fisherMan = new Fisherman();
+
+        public void DiscoverAround(int xPos, int yPos)
+        {
+
+            if (xPos == 1 && yPos == 1)
+            {
+                Console.WriteLine("Sunny day in your friendly neighborhood.");
+                Console.WriteLine("İstanbul is a beatiful place for cats.");
+            }
+            else if (xPos == 1 && yPos == 2)
+            {
+                Console.WriteLine("An empty street.");
+                Console.WriteLine("Looks empty.");
+            }
+            else if (xPos == 1 && yPos == 3)
+            {
+                Console.WriteLine("It looks like there is another cat in this street.");
+                Console.WriteLine("It is better to pass through this street.");
+            }
+            else if (xPos == 2 && yPos == 1)
+            {
+                Console.WriteLine("Even the garbage looks empty here.");
+                Console.WriteLine("Gotta find the fisherman.");
+            }
+            else if (xPos == 2 && yPos == 2)
+            {
+                //Old Lady
+                oldLady.Dialogue();
+                oldLadyEvent = true;
+
+            }
+            else if (xPos == 2 && yPos == 3)
+            {
+                Console.WriteLine("You can see the sea from here.");
+                Console.WriteLine("You wish you were a seagull now.");
+            }
+            else if (xPos == 3 && yPos == 1)
+            {
+                Console.WriteLine("Garbage here was not empty.");
+                Console.WriteLine("You feel fuller now but you can still smell the fish.");
+            }
+            else if (xPos == 3 && yPos == 2)
+            {
+                Console.WriteLine("Tree's shadow looked really cozy to you.");
+                Console.WriteLine("You took a short nap (8 hours).");
+            }
+            else if (xPos == 3 && yPos == 3)
+            {
+                //Fisherman
+                fisherMan.Dialogue();
+                fisherManEvent = true;
+            }
+
+        }
+
+
+        public bool GameEndCheck()
+        {
+            if (fisherManEvent && oldLadyEvent)
+            {
+                fisherManEvent = false;
+                oldLadyEvent = false;
+                Console.WriteLine("GAME ENDED THANKS FOR PLAYING.");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+    }
+}
