@@ -1,0 +1,73 @@
+using System;
+
+namespace DGD203_NazBedriyeSaral_CatsAdventures
+{
+    internal class OldLady
+    {
+        public void Dialogue()
+        {
+            Console.WriteLine("This street is almost empty too");
+            Console.WriteLine("But then you see an old lady calling for you.");
+
+            Console.WriteLine("1. Approach carefully.");
+            Console.WriteLine("2. Ignore the old lady.");
+
+            bool inFirstAnswer = true;
+
+            while (inFirstAnswer)
+            {
+                string answer = Console.ReadLine();
+
+                if (answer == "1")
+                {
+                    Console.WriteLine("You started taking little steps to the old lady.");
+                    Console.WriteLine("What a lovely creature you are said the old lady while petting your head.");
+                    Console.WriteLine("After that she took out food and gave it to you.");
+                    inFirstAnswer = false;
+                }
+                else if (answer == "2")
+                {
+                    Console.WriteLine("Old lady yelled again.");
+                    Console.WriteLine("Come on love, I have food for ya'.");
+                    bool inSecondAnswer = true;
+                    while (inSecondAnswer)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("1. Snuggle to the old lady.");
+                        Console.WriteLine("2. Ignore her.");
+
+
+                        string secondAnswer = Console.ReadLine();
+                        if (secondAnswer == "1")
+
+                        {
+                            Console.WriteLine("What a lovely creature you are said the old lady while petting your head.");
+                            Console.WriteLine("After that she took out food and gave it to you.");
+                            inSecondAnswer = false;
+                            inFirstAnswer = false;
+                        }
+                        else if (secondAnswer == "2")
+                        {
+                            Console.WriteLine("Old lady went inside.");
+                            Console.WriteLine("You could see her frustration from her face.");
+                            inSecondAnswer = false;
+                            inFirstAnswer = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please try again purrr.");
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Please try again purrr.");
+                }
+            }
+
+        }
+
+
+    }
+}
