@@ -1,0 +1,50 @@
+using System;
+
+namespace DGD203_NazBedriyeSaral_CatsAdventures
+{
+    internal class Inputs
+    {
+
+       public Discover discover;
+
+        Movement movement = new Movement();
+        public void NewInput(string currentInput)
+        {
+
+           
+            if (currentInput == "discover" || currentInput == "d")
+            {
+                discover.DiscoverAround(movement.CurrentXStatus(), movement.CurrentYStatus());
+            }
+            else if (currentInput == "status")
+            {
+                Console.WriteLine($"Your position is {movement.CurrentXStatus()}, {movement.CurrentYStatus()}");
+            }
+            else if (currentInput == "up" || currentInput == "down" || currentInput == "right" || currentInput == "left")
+            {
+
+                //Movement class
+                movement.Move(currentInput);
+            }
+            else if (currentInput == "purr")
+            {
+                //Purr
+                Console.WriteLine("People passing by looked at you with admiration.");
+            }
+            else
+            {
+                Console.WriteLine("Please try again purrr.");
+            }
+            if (movement.CurrentXStatus() == 2 && movement.CurrentYStatus() == 2)
+            {
+                Console.WriteLine("Possible interaction, please discover.");
+            }
+            else if (movement.CurrentXStatus() == 3 && movement.CurrentYStatus() == 3)
+            {
+                Console.WriteLine("Possible interaction, please discover.");
+            }
+        }
+
+
+    }
+}
