@@ -1,0 +1,75 @@
+using System;
+
+namespace DGD203_NazBedriyeSaral_CatsAdventures
+{
+    internal class Fisherman
+    {
+
+        public void Dialogue()
+        {
+            Console.WriteLine("You smell the delicious smell of fish.");
+            Console.WriteLine("Then you see the the fisherman at end of the road.");
+
+            Console.WriteLine("1. Sit next to the fish stand.");
+            Console.WriteLine("2. Try to steal a fish.");
+
+            bool inFirstAnswer = true;
+
+            while (inFirstAnswer)
+            {
+                string answer = Console.ReadLine();
+
+                if (answer == "1")
+                {
+                    Console.WriteLine("You took careful steps and sat next to the fish stand.");
+                    Console.WriteLine("Fisherman gently smiled at you.");
+                    Console.WriteLine("He took his gloves out started petting you.");
+                    Console.WriteLine("After that he gave you anchovy.");
+                    Console.WriteLine("You are a happy cat now.");
+                    Console.WriteLine("  |\\/|\r\n  `o.o'\r\n  =()=\r\n    U.");
+                    inFirstAnswer = false;
+                }
+                else if (answer == "2")
+                {
+                    Console.WriteLine("When you come closer to the stand fisherman started to lok at you more carefully.");
+                    Console.WriteLine("You gotta try your luck somewhere else you little hırto.");
+                    bool inSecondAnswer = true;
+                    while (inSecondAnswer)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("1. Just sit next to the fish stand.");
+                        Console.WriteLine("2. Try to steal it.");
+
+
+                        string secondAnswer = Console.ReadLine();
+                        if (secondAnswer == "1")
+
+                        {
+                            Console.WriteLine("I really don't have a chance against you huh?.");
+                            Console.WriteLine("said fisherman while giving you a fish.");
+                            inSecondAnswer = false;
+                            inFirstAnswer = false;
+                        }
+                        else if (secondAnswer == "2")
+                        {
+                            Console.WriteLine("When you try to steal a fish your paw stuck to the bucket and bucket fell down.");
+                            Console.WriteLine("No one was buying them anyway said the fisherman just take whatever you want.");
+                            inSecondAnswer = false;
+                            inFirstAnswer = false;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Please try again purrr.");
+                        }
+                    }
+
+                }
+                else
+                {
+                    Console.WriteLine("Please try again purrr.");
+                }
+            }
+
+        }
+    }
+}
